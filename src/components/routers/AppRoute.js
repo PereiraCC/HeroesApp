@@ -5,6 +5,7 @@ import { LoginScreen } from '../login/LoginScreen';
 
 import { DashboardRoutes } from './DashboardRoutes';
 import { PrivateRoute } from './PrivateRoute';
+import { PublicRoute } from './PublicRoute';
 
 export const AppRoute = () => {
     return (
@@ -12,7 +13,13 @@ export const AppRoute = () => {
             
             <Routes>
         
-                <Route path="/login"  element={<LoginScreen />} />
+                {/* <Route path="/login"  element={<LoginScreen />} /> */}
+
+                <Route path="/login" element={
+                    <PublicRoute>
+                        <LoginScreen />
+                    </PublicRoute>
+                }/>
 
                 <Route path="/*" element={
                     <PrivateRoute>
