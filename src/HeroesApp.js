@@ -3,7 +3,7 @@ import { useEffect, useReducer } from 'react';
 import { AuthContext } from './auth/authContext';
 import { authReducer } from './auth/authReducer';
 
-import { AppRoute } from './components/routers/AppRoute';
+import { AppRoute } from './routers/AppRoute';
 
 const init = () => {
     return JSON.parse(localStorage.getItem('user')) || { logged: false };
