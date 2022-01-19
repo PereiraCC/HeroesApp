@@ -12,16 +12,6 @@ export const HeroScreen = () => {
 
     const hero =  useMemo( () => getHeroesById( heroId ), [ heroId ] ); 
     
-    const {
-        id,
-        superhero,
-        publisher,
-        alter_ego,
-        first_appearance,
-        characters
-    } = hero;
-    
-
     const handleReturn = () => {
         navigate(`/${publisher.split(' ')[0].toLowerCase()}`);
         // navigate(-1);
@@ -30,6 +20,15 @@ export const HeroScreen = () => {
     if( !hero ) {
         return <Navigate to='/' />
     }
+
+    const {
+        id,
+        superhero,
+        publisher,
+        alter_ego,
+        first_appearance,
+        characters
+    } = hero;
 
     const imagePath = `/assets/${id}.jpg`;
 
